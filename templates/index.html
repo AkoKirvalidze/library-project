@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="icon" href="../static/book.png">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css' )}}">
+  <script src="https://kit.fontawesome.com/a6de2eccc1.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header>
+
+    <nav>
+      <ul>
+        <li><a href="/"><img src="../static/nerd-emoji.png" alt="" width="50px" style="border-radius: 50px"></a></li>
+        <li><a href="/" style="text-decoration: none"><h1 style="margin-top: 8px;">VANTA LIBRARY</h1></a></li>
+        <div class="names">
+        <li><a href="/" class="link-button" style="text-decoration: none;">Home</a></li>
+        <li><a href="/library" class="link-button" style="text-decoration: none;">Add Books</a></li>
+        <li><a href="/about" class="link-button" style="text-decoration: none;">About</a></li>
+      </div>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Rest of the website content goes here -->
+ {% block content %}{% endblock %}
+</body>
+</html>

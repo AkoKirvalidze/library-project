@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block title %}Book info{% endblock %}
+{% block content %}
+<center>
+<div style="display: flex; width: 750px">
+  {% for book in books %}
+  <div class="myCard">
+    <div class="innerCard">
+        <div class="frontSide">
+            <img src="../static/files/{{ book.filename }}" alt="">
+            <p class="title">{{ book.name }}</p>
+        </div>
+        <div class="backSide">
+            <p class="title">{{ book.author }}</p>
+            <p>{{ book.genre }}</p>
+            <div style="display: flex;">
+                <a href="/book/{{ book.id }}"><button class="icons"><i class="fa-solid fa-magnifying-glass" ></i></button></a>
+            <a href="/library/delete/{{ book.id }}"><button class="icons"><i class="fa-solid fa-trash-can"></i></button></a>
+                <a href="/library/update/{{ book.id }}"><button class="icons"><i class="fa-solid fa-arrows-rotate"></i></button></a>
+            </div>
+        </div>
+    </div>
+</div>
+ {% endfor %}
+
+  </div>
+</center>
+{% endblock %}

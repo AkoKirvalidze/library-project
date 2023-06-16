@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% block title %}adding book{% endblock %}
+{% block content %}
+<center>
+    <br>
+    <h1>ADD THE BOOK</h1>
+    <form action="/library" method="post" class="shevseba" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+        <label for="name">Name</label>
+        {{ form.name }}
+        <label for="description">Description</label>
+        {{ form.description }}
+        <label for="author">Author</label>
+        {{ form.author }}
+        <label for="genre">Genre</label>
+        {{ form.genre }}
+        <label for="ISBN">ISBN</label>
+        {{ form.ISBN }}
+        <label for="available">Available</label>
+        {{ form.available }}
+        <label for="image">Image</label>
+        {{ form.image }}
+        <br>
+    {{ form.submit }}
+        <br>
+        <br>
+    </form>
+</center>
+    <br>
+
+{% endblock %}

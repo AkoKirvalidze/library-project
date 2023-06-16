@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% block title %}Update book{% endblock %}
+{% block content %}
+<center>
+    <br>
+    <h1>UPDATE THE BOOK</h1>
+    <form action="/library/update/{{ id }}" method="post" class="shevseba">
+    {{ form.hidden_tag() }}
+    <label for="name">Name:</label>
+    {{ form.name }}
+    <label for="description">Description:</label>
+    {{ form.description }}
+    <label for="author">Author:</label>
+    {{ form.author }}
+    <label for="genre">Genre:</label>
+    {{ form.genre }}
+    <label for="ISBN">ISBN:</label>
+    {{ form.ISBN }}
+    <label for="available">Available:</label>
+    {{ form.available }}
+    <label for="image">Image</label>
+    {{ form.image }}
+    {{ form.submit }}
+        <br>
+  </form>
+</center>
+    <br>
+    <br>
+{% endblock %}

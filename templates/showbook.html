@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+{% block title %}Vanta library{% endblock %}
+{% block content %}
+
+    <div class="every">
+    <div class="category">
+    <h1 style="color:white">categories</h1>
+        <br>
+    {% for kategoria in categories %}
+    <a href="/category/{{ kategoria }}" class="linki" style="text-decoration: none;"> {{ kategoria }}</a>
+    {% endfor %}
+    <br>
+        <a href="https://www.youtube.com/watch?v=MQL73xzh1f4" ><img src="../static/kote.jpg" alt="" width="200px" style="border-radius: 10px"></a>
+
+    </div>
+
+ <div class="content">
+  {% for book in books %}
+  <div class="myCard">
+    <div class="innerCard">
+        <div class="frontSide">
+            <img src="../static/files/{{ book.filename }}" alt="">
+            <p class="title">{{ book.name }}</p>
+        </div>
+        <div class="backSide">
+            <p class="title">{{ book.author }}</p>
+            <p>{{ book.genre }}</p>
+            <div style="display: flex;">
+                <a href="/book/{{ book.id }}"><button class="icons"><i class="fa-solid fa-magnifying-glass" ></i></button></a>
+            <a href="/library/delete/{{ book.id }}"><button class="icons"><i class="fa-solid fa-trash-can"></i></button></a>
+                <a href="/library/update/{{ book.id }}"><button class="icons"><i class="fa-solid fa-arrows-rotate"></i></button></a>
+            </div>
+        </div>
+    </div>
+</div>
+ {% endfor %}
+  </div>
+    </div>
+
+{% endblock %}
+

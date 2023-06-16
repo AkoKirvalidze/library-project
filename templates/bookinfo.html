@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% block title %}Book info{% endblock %}
+{% block content %}
+<center>
+    <div class="info">
+    <img src="/static/files/{{ book.filename }}" alt="" width="300px" style="margin-top: 20px">
+    <div class="in">
+     <h1><strong>Name: </strong>{{ book.name }}</h1>
+    <h1><strong>Author: </strong>{{ book.author }}</h1>
+    <h2><strong>ISBN: </strong>{{ book.ISBN }}</h2>
+    <h3><strong>Available: </strong>{{ book.available }}</h3>
+    <p><strong>Genre: </strong>{{ book.genre }}</p>
+    <center><p> {{ book.description }}</p></center>
+    </div>
+</div>
+</center>
+    <br>
+    <br>
+    <center>
+    <h1>similar books</h1>
+    <div class="same">
+    {% for book in books2 %}
+   <div class="myCard">
+    <div class="innerCard">
+        <div class="frontSide">
+            <img src="../static/files/{{ book.filename }}" alt="">
+            <p class="title">{{ book.name }}</p>
+        </div>
+        <div class="backSide">
+            <p class="title">{{ book.author }}</p>
+            <p>{{ book.genre }}</p>
+            <div style="display: flex;">
+                <a href="/book/{{ book.id }}"><button class="icons"><i class="fa-solid fa-magnifying-glass" ></i></button></a>
+            <a href="/library/delete/{{ book.id }}"><button class="icons"><i class="fa-solid fa-trash-can"></i></button></a>
+                <a href="/library/update/{{ book.id }}"><button class="icons"><i class="fa-solid fa-arrows-rotate"></i></button></a>
+            </div>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+    </div>
+    </center>
+    <br>
+    <br>
+{% endblock %}
